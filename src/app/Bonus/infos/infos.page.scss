@@ -1,5 +1,4 @@
 ion-content{
-
     #top{
         margin: 20% 0 10% 0;
       
@@ -9,8 +8,6 @@ ion-content{
         }
     
       }
-            height: 100px;
-      
 
     p{
         width: 80%;
@@ -18,22 +15,11 @@ ion-content{
         margin-left: 9%;
     }
 
-    #info-principa{
+    #listando{
         padding: 10px;
 
         ion-item{
             padding: 5px;
         }
-
-        #part2{
-            margin-top: 20px;
-        }
     }
-
-    .but{
-        width: 80%;
-        height: 45px;
-        margin: 30px 0 0 10% ;
-      }
-    
 }
