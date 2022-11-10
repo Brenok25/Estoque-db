@@ -1,0 +1,31 @@
+ion-content{
+    #top{
+        margin: 20% 0 10% 0;
+      
+        h1{
+            font-size: x-large;
+            text-align: center;
+        }
+    
+      }
+
+    p{
+        width: 80%;
+        text-align: center;
+        margin-left: 9%;
+    }
+
+    #info-principa{
+        padding: 10px;
+
+        ion-item{
+            padding: 5px;
+        }
+
+        #part2{
+            margin-top: 20px;
+        }
+    }
+
+
+}
