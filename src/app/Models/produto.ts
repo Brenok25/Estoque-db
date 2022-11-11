@@ -4,7 +4,7 @@ export interface Produto {
     id: Guid, 
     nome: string, 
     desc_breve: string, 
-    fornecesir: string,
+    fornecedor: string,
     valor: string,
     quantidade: string
 }

@@ -8,5 +8,11 @@ import { Storage } from '@ionic/storage-angular'
 })
 export class ProdutosServService {
 
-  constructor() { }
+  constructor(private storage: Storage) { }
+
+  InserirProduto(dadosRecebidos: Produto){
+    dadosRecebidos.id = Guid.create()
+    this.storage.set(dadosRecebidos.id.toString(), JSON.stringify(dadosRecebidos))
+  }
+
 }

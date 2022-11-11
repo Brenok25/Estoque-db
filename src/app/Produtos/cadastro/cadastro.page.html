@@ -19,34 +19,34 @@
   <div id="formulario">
 
     <div id="info-principa">
-      <form>
+      <form #form="ngForm" [formGroup]="AddForm" (ngSubmit)="Cadastrar()" >
 
         <ion-item>
           <ion-label position="floating"> Nome:</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.nome" formControlName="nome"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Descrição breve:</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.desc_breve" formControlName="desc_breve"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Fornecedor:</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.fornecedor" formControlName="fornecedor"></ion-input>
         </ion-item>
 
         <ion-item id="part2">
           <ion-label position="floating"> Valor de venda:</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.valor" formControlName="valor" ></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Quantidade em estoque:</ion-label>
-          <ion-input type="text" placeholder="0"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.quantidade" formControlName="quantidade" placeholder="0"></ion-input>
         </ion-item>
 
-        <ion-button class="but">CADASTRAR</ion-button>
+        <ion-button class="but" type="submit">CADASTRAR</ion-button>
 
       </form>
 
