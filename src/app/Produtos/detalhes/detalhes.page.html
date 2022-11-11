@@ -8,6 +8,7 @@
 
 
 <ion-content>
+
   <div id="top">
     <h1>Detalhes</h1>
   </div>    
@@ -36,5 +37,18 @@
     <ion-label>quantidade:</ion-label>
     <p>{{detalhesProduto.quantidade}}</p>
   </ion-item>
+
+  <div id="botao">
+
+    <ion-button> Comprar</ion-button>
+    <ion-button>Vender</ion-button>
+
+    <ion-fab>
+      <ion-fab-button (click)="presentAlert()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </div>
 
 </ion-content>

@@ -25,4 +25,9 @@ export class ProdutosServService {
   async FiltraProdutoId(id : string){
     return JSON.parse(await this.storage.get(id))
   }
+
+  // Excluindo produto
+  ExcluirProdutoId(id: string){
+    this.storage.remove(id)
+  }
 }
