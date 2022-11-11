@@ -21,8 +21,8 @@ export class ProdutosServService {
     return arrayProdutos
   }
 
-  // MostrarTudo(id: string, dadosRecebidos: Produto){
-  //   dadosRecebidos.id = Guid.parse(id)
-  // }
-
+  // Tentando listar os detalhes func abaixo deveria pegar o id
+  async FiltraContatosId(id : string){
+    return JSON.parse(await this.storage.get(id))
+  }
 }
