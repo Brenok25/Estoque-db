@@ -15,4 +15,14 @@ export class ProdutosServService {
     this.storage.set(dadosRecebidos.id.toString(), JSON.stringify(dadosRecebidos))
   }
 
+  ListarTodosContatos(){
+    let arrayProdutos : Produto [] = []
+    this.storage.forEach((valor : string) => {const produto : Produto = JSON.parse(valor);arrayProdutos.push(produto)})
+    return arrayProdutos
+  }
+
+  // MostrarTudo(id: string, dadosRecebidos: Produto){
+  //   dadosRecebidos.id = Guid.parse(id)
+  // }
+
 }

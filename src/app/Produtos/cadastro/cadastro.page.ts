@@ -4,6 +4,7 @@ import { Guid } from 'guid-typescript';
 import { Produto } from 'src/app/Models/produto';
 import { ProdutosServService } from 'src/app/Service/produtos-serv.service';
 import { AlertController, NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -19,7 +20,8 @@ export class CadastroPage implements OnInit {
     private objDadosService: ProdutosServService,
     public formBuilder: FormBuilder,
     private alertController: AlertController,// objeto usado para criar a caixa de alerta
-    public navCtrl: NavController //objeto usado voltar de pagina
+    public navCtrl: NavController, //objeto usado voltar de pagina
+    private objRoute : ActivatedRoute, //objeto usado para 'pegar' o id do contato passado através da pagina inicial
 
   ) { }
     // comentario abaixo cria uma notificaçãoq ue o produto foi criado
@@ -60,8 +62,14 @@ export class CadastroPage implements OnInit {
     if (this.AddForm.valid){
       this.objDadosService.InserirProduto( this.AddForm.value)
       this.presentAlert()
+
     }
+    
+  //   const id : string = String(this.objRoute.snapshot.paramMap.get('id'))
+  //   if (this.AddForm.valid){
+  //     this.objDadosService.MostrarTudo(id, this.AddForm.value)
+  // }
+
+  
   }
-
-
 }

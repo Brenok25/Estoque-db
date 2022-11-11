@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutosServService } from 'src/app/Service/produtos-serv.service';
 
 @Component({
   selector: 'app-historico',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historico.page.scss'],
 })
 export class HistoricoPage implements OnInit {
+  public todosProdutos
 
-  constructor() { }
+  constructor(
+    private objDadosService : ProdutosServService
+  ) { }
 
   ngOnInit() {
+    this.todosProdutos = this.objDadosService.ListarTodosContatos()
   }
 
 }

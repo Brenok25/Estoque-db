@@ -15,7 +15,9 @@
 <p>Lorem ipsum dolor sit amet conse.</p>
 
 <div id="listando">
-  
+  <ion-item *ngFor="let arrayProdutos of todosProdutos" routerLink="/detalhes/{{arrayProdutos.id.value}}">
+    <ion-label>{{arrayProdutos.nome}}</ion-label>
+  </ion-item> 
 </div>
 
 </ion-content>
