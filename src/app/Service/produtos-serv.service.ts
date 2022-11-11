@@ -22,7 +22,7 @@ export class ProdutosServService {
   }
 
   // Tentando listar os detalhes func abaixo deveria pegar o id
-  async FiltraContatosId(id : string){
+  async FiltraProdutoId(id : string){
     return JSON.parse(await this.storage.get(id))
   }
 }

@@ -7,7 +7,7 @@ import { ProdutosServService } from 'src/app/Service/produtos-serv.service';
   styleUrls: ['./historico.page.scss'],
 })
 export class HistoricoPage implements OnInit {
-  public todosProdutos
+  public todosProdutos : any
 
   constructor(
     private objDadosService : ProdutosServService

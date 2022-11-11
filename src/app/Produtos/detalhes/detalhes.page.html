@@ -1,28 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detalhes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+  <div id="top">
+    <h1>Detalhes</h1>
+  </div>    
+  
   <ion-item >
     <ion-label>Nome:</ion-label>
     <p>{{detalhesProduto.nome}}</p>
   </ion-item>
-  <ion-item>
+
+  <ion-item >
     <ion-label>desc_breve:</ion-label>
     <p>{{detalhesProduto.desc_breve}}</p>
   </ion-item>
+
   <ion-item >
     <ion-label>fornecedor:</ion-label>
     <p>{{detalhesProduto.fornecedor}}</p>
   </ion-item>
+
   <ion-item >
     <ion-label>valor:</ion-label>
     <p>{{detalhesProduto.valor}}</p>
   </ion-item>
-  <ion-item>
+
+  <ion-item >
     <ion-label>quantidade:</ion-label>
     <p>{{detalhesProduto.quantidade}}</p>
   </ion-item>
