@@ -24,6 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./Bonus/infos/infos.module').then( m => m.InfosPageModule)
   },
   {
+    //Isso aqui é essencial para o router pegar o id e ir pra pagina certa
     path: 'detalhes/:id',
     loadChildren: () => import('./Produtos/detalhes/detalhes.module').then( m => m.DetalhesPageModule)
   },

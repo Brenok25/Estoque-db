@@ -7,6 +7,7 @@ import { ProdutosServService } from 'src/app/Service/produtos-serv.service';
   styleUrls: ['./historico.page.scss'],
 })
 export class HistoricoPage implements OnInit {
+  // acho eu q é o q recebe tudo que será passado pelo listar todos os contatos/ produtos
   public todosProdutos : any
 
   constructor(

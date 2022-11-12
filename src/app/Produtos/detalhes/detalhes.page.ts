@@ -24,6 +24,7 @@ export class DetalhesPage implements OnInit {
     public navCtrl: NavController
   ) { }
 
+  //alert se realmente desej aou n excluir o produto
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Deseja excluir o produto?!',
@@ -52,6 +53,8 @@ export class DetalhesPage implements OnInit {
     this.modoEdicao = true
   }
 
+  //Essa func ao encerrar a edição e voltar com os detalhes mapea o id e envia ele com os dados do form para a func de compra que att o banco
+  // O formulario ta passando todos os valores de volta porem so aparece pra edição a quantidade, n é recomendavel mas é o q temos
   EncerrarEdicao(){
     const id : string = String(this.objRoute.snapshot.paramMap.get('id'))
     if (this.moviForm.valid){
@@ -60,12 +63,14 @@ export class DetalhesPage implements OnInit {
     }
   }
 
+  //usado ora testar troca dde telas pelo modo de edição
   comprar(){
     console.log("funciona")
   }
 
 
   ngOnInit() {
+    //Mesmo role de validação mas valida apenas quantidade que n pode passar null -- os demais tão ai pra n quebrar codigo
     this.detalhesProduto = {id : Guid.createEmpty(), nome:"", desc_breve:"", fornecedor:"", valor:"", quantidade:""}
 
     const id : string = String(this.objRoute.snapshot.paramMap.get('id'))
@@ -86,6 +91,7 @@ export class DetalhesPage implements OnInit {
     // captura do id do contato
     const id : string = String(this.objRoute.snapshot.paramMap.get('id'))
     
+    //e passa ele pra exclusão
     this.objDadosService.ExcluirProdutoId(id)
   }
 

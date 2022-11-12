@@ -14,6 +14,8 @@
     <div class="top">
       <h1>Detalhes</h1>
     </div>    
+
+    <!-- Aqui ele lista as informações do id selecionado e passa na tela -->
     
     <ion-item >
       <ion-label>Nome:</ion-label>
@@ -44,6 +46,7 @@
 
   <div id="botao" *ngIf="!modoEdicao">
 
+    <!-- botão q passa o modo de edição e troca as info da tela -->
     <ion-button class="but" (click)="IniciarEdicao()"> Movimentar</ion-button> <br>
 
     <ion-button class="but" (click)="presentAlert()">
@@ -61,6 +64,9 @@
 
 
       <!-- class null é mo gambiarra boy Deus o livre -->
+      <!-- A func de att ela atualiza todos os itens de um determinado id e eu n consegui modificar isso,
+      portanto esses itens abaixo n deixa atualizar tudo no banco como null e com depois esconde ou seja tem os inouts pro user 
+    mexer só n aparece pra ele pelo css ysando display none -->
 
       <ion-item class="null">
         <ion-label position="floating"> Nome:</ion-label>

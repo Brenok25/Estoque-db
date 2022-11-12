@@ -17,14 +17,14 @@ export class CadastroPage implements OnInit {
   public AddForm: FormGroup
 
   constructor(
-    private objDadosService: ProdutosServService,
-    public formBuilder: FormBuilder,
+    private objDadosService: ProdutosServService, //Service - - E o que usa pra puxas as func q estão lá
+    public formBuilder: FormBuilder, // Formulario lá
     private alertController: AlertController,// objeto usado para criar a caixa de alerta
     public navCtrl: NavController, //objeto usado voltar de pagina
     private objRoute : ActivatedRoute, //objeto usado para 'pegar' o id do contato passado através da pagina inicial
 
   ) { }
-    // comentario abaixo cria uma notificaçãoq ue o produto foi criado
+    // cria um alert pra falar que o produto foi adicionado e volta
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Produto adicionado!',
@@ -44,6 +44,7 @@ export class CadastroPage implements OnInit {
 
   ngOnInit() {
 
+    //Aqui faz a validção do formulaio 
     this.detalhesProduto = {id : Guid.createEmpty(), nome:"", desc_breve:"", fornecedor:"", valor:"", quantidade:""}
 
     this.AddForm = this.formBuilder.group({
@@ -58,6 +59,7 @@ export class CadastroPage implements OnInit {
 
   }
 
+  //Aqui se o formulario for valido ele passa os dados para a func q adiciona no banco e em seguida passa o alert lá de cima 
   Cadastrar(){
     if (this.AddForm.valid){
       this.objDadosService.InserirProduto( this.AddForm.value)

@@ -13,7 +13,7 @@ import { DetalhesPage } from './detalhes.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, //aqui tem q add pro formulario rodar
     DetalhesPageRoutingModule
   ],
   declarations: [DetalhesPage]

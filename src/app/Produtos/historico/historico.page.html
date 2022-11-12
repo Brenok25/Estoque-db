@@ -14,8 +14,9 @@
 
 <p>Lorem ipsum dolor sit amet conse.</p>
 
+<!-- pega todos os dados que são passados para o TS e em seguida lista apenas o nome -->
 <div id="listando" *ngIf="!mododeedicao">
-  <ion-item *ngFor="let arrayProdutos of todosProdutos" routerLink="/detalhes/{{arrayProdutos.id.value}}">
+  <ion-item *ngFor="let arrayProdutos of todosProdutos" routerLink="/detalhes/{{arrayProdutos.id.value}}"> <!-- Não esquecdo .value pois sem ele o router link le apenas como obj  e o value pega o id // modificar na tela app routine modules tbme  -->
     <ion-label>{{arrayProdutos.nome}}</ion-label>
   </ion-item> 
 </div>

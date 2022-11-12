@@ -14,7 +14,7 @@ import { CadastroPage } from './cadastro.page';
     FormsModule,
     IonicModule,
     CadastroPageRoutingModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule //aqui tem que adicionar para o formulario rodar
   ],
   declarations: [CadastroPage]
 })
