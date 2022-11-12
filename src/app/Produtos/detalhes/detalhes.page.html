@@ -7,48 +7,91 @@
 </ion-header>
 
 
-<ion-content>
-
-  <div id="top">
-    <h1>Detalhes</h1>
-  </div>    
+<ion-content> 
   
-  <ion-item >
-    <ion-label>Nome:</ion-label>
-    <p>{{detalhesProduto.nome}}</p>
-  </ion-item>
+  <div id="mostrar" *ngIf="!modoEdicao">
 
-  <ion-item >
-    <ion-label>desc_breve:</ion-label>
-    <p>{{detalhesProduto.desc_breve}}</p>
-  </ion-item>
+    <div class="top">
+      <h1>Detalhes</h1>
+    </div>    
+    
+    <ion-item >
+      <ion-label>Nome:</ion-label>
+      <p>{{detalhesProduto.nome}}</p>
+    </ion-item>
 
-  <ion-item >
-    <ion-label>fornecedor:</ion-label>
-    <p>{{detalhesProduto.fornecedor}}</p>
-  </ion-item>
+    <ion-item >
+      <ion-label>desc_breve:</ion-label>
+      <p>{{detalhesProduto.desc_breve}}</p>
+    </ion-item>
 
-  <ion-item >
-    <ion-label>valor:</ion-label>
-    <p>{{detalhesProduto.valor}}</p>
-  </ion-item>
+    <ion-item >
+      <ion-label>fornecedor:</ion-label>
+      <p>{{detalhesProduto.fornecedor}}</p>
+    </ion-item>
 
-  <ion-item >
-    <ion-label>quantidade:</ion-label>
-    <p>{{detalhesProduto.quantidade}}</p>
-  </ion-item>
+    <ion-item >
+      <ion-label>valor:</ion-label>
+      <p>{{detalhesProduto.valor}}</p>
+    </ion-item>
 
-  <div id="botao">
-
-    <ion-button> Comprar</ion-button>
-    <ion-button>Vender</ion-button>
-
-    <ion-fab>
-      <ion-fab-button (click)="presentAlert()">
-        <ion-icon name="trash-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+    <ion-item >
+      <ion-label>quantidade:</ion-label>
+      <p>{{detalhesProduto.quantidade}}</p>
+    </ion-item>
 
   </div>
+
+  <div id="botao" *ngIf="!modoEdicao">
+
+    <ion-button class="but" (click)="IniciarEdicao()"> Movimentar</ion-button> <br>
+
+    <ion-button class="but" (click)="presentAlert()">
+      <ion-label><ion-icon name="trash-outline"></ion-icon></ion-label> &nbsp; DELETAR
+    </ion-button>
+
+  </div>
+
+  <div id="movimentacao" *ngIf="modoEdicao">
+    <div class="top">
+      <h1>Movimentação</h1>
+    </div>  
+
+    <form #form="ngForm" (ngSubmit)="EncerrarEdicao()" [formGroup]="moviForm">
+
+
+      <!-- class null é mo gambiarra boy Deus o livre -->
+
+      <ion-item class="null">
+        <ion-label position="floating"> Nome:</ion-label>
+        <ion-input [(ngModel)]="detalhesProduto.nome" formControlName="nome"></ion-input>
+      </ion-item>
+
+      <ion-item class="null">
+        <ion-label position="floating"> Descrição breve:</ion-label>
+        <ion-input [(ngModel)]="detalhesProduto.desc_breve" formControlName="desc_breve"></ion-input>
+      </ion-item>
+
+      <ion-item class="null">
+        <ion-label position="floating"> Fornecedor:</ion-label>
+        <ion-input [(ngModel)]="detalhesProduto.fornecedor" formControlName="fornecedor"></ion-input>
+      </ion-item>
+
+      <ion-item id="part2" class="null">
+        <ion-label position="floating"> Valor de venda:</ion-label>
+        <ion-input [(ngModel)]="detalhesProduto.valor" formControlName="valor" ></ion-input>
+      </ion-item>
+
+      <ion-item >
+        <ion-label position="floating">Quantidade:</ion-label>
+        <ion-input [(ngModel)]="detalhesProduto.quantidade" formControlName="quantidade" type="number"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="comprar()" type="submit" class="but"> Confirmar </ion-button>
+    </form>
+  </div>
+
+
+
 
 </ion-content>

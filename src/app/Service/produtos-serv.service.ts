@@ -26,6 +26,13 @@ export class ProdutosServService {
     return JSON.parse(await this.storage.get(id))
   }
 
+  ComprarProduto(id: string, dadosRecebidos : Produto){
+    this.ListarTodosContatos()
+
+    dadosRecebidos.id = Guid.parse(id)
+    this.storage.set(dadosRecebidos.id.toString(), JSON.stringify(dadosRecebidos))
+  }
+
   // Excluindo produto
   ExcluirProdutoId(id: string){
     this.storage.remove(id)
