@@ -77,7 +77,7 @@ export class DetalhesPage implements OnInit {
       desc_breve: [this.detalhesProduto.desc_breve],
       fornecedor : [this.detalhesProduto.fornecedor],
       valor : [this.detalhesProduto.valor],
-      quantidade : [this.detalhesProduto.quantidade]
+      quantidade : [this.detalhesProduto.quantidade, Validators.compose([Validators.required])]
     })
 
   }

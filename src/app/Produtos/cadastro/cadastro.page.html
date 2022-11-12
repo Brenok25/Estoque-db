@@ -23,28 +23,27 @@
 
         <ion-item>
           <ion-label position="floating"> Nome:</ion-label>
-          <ion-input [(ngModel)]="detalhesProduto.nome" formControlName="nome"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.nome" formControlName="nome" [clearInput]="true"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Descrição breve:</ion-label>
-          <ion-input [(ngModel)]="detalhesProduto.desc_breve" formControlName="desc_breve"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.desc_breve" formControlName="desc_breve" [clearInput]="true"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Fornecedor:</ion-label>
-          <ion-input [(ngModel)]="detalhesProduto.fornecedor" formControlName="fornecedor"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.fornecedor" formControlName="fornecedor" [clearInput]="true"></ion-input>
         </ion-item>
 
         <ion-item id="part2">
           <ion-label position="floating"> Valor de venda:</ion-label>
-          <ion-input [(ngModel)]="detalhesProduto.valor" formControlName="valor" ></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.valor" formControlName="valor" [clearInput]="true" type="number" ></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating"> Quantidade em estoque:</ion-label>
-          <!-- <ion-input [clearInput]="true" placeholder="Enter text to see clear button" value="Default value"></ion-input> -->
-          <ion-input [(ngModel)]="detalhesProduto.quantidade" formControlName="quantidade" placeholder="0"></ion-input>
+          <ion-input [(ngModel)]="detalhesProduto.quantidade" formControlName="quantidade" [clearInput]="true" placeholder="0" type="number"></ion-input>
         </ion-item>
 
         <ion-button class="but" type="submit">CADASTRAR</ion-button>
