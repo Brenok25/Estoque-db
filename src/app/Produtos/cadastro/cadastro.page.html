@@ -21,7 +21,7 @@
 
 <!-- Aqui fica o formulario de cadastro de um novo item no storage -->
     <div id="info-principa">
-      <form #form="ngForm" [formGroup]="AddForm" (ngSubmit)="Cadastrar()" >
+      <form #form="ngForm" [formGroup]="AddForm" (ngSubmit)="presentAlert()" >
 
         <ion-item>
           <ion-label position="floating"> Nome:</ion-label>

@@ -27,12 +27,19 @@ export class CadastroPage implements OnInit {
     // cria um alert pra falar que o produto foi adicionado e volta
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Produto adicionado!',
+      header: 'Adicionar Produto!?',
       buttons: [
         {
-          text: 'Voltar',
+          text: 'Não',
           handler: () => {
-            //botão 'Sim' chama o método que exclui contato
+            ;
+          },
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            //botão sim insere contato no banco
+            this.Cadastrar()
             this.navCtrl.back()
             ;
           },
@@ -63,8 +70,6 @@ export class CadastroPage implements OnInit {
   Cadastrar(){
     if (this.AddForm.valid){
       this.objDadosService.InserirProduto( this.AddForm.value)
-      this.presentAlert()
-
     }
     
   //   const id : string = String(this.objRoute.snapshot.paramMap.get('id'))
